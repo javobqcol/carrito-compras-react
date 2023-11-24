@@ -9,8 +9,9 @@ export const NavBar = () => {
   
   const { listaCompras } = useContext(CarritoContext)
 
-  return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+  return ( 
+
+    <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div className="container-fluid">
         <NavLink to='/' className="navbar-brand" href="#">Carrito
         </NavLink>

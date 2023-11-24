@@ -1,27 +1,24 @@
-import { useState } from "react"
 import '../styles/card.css'
 
-export const Cards = ({imagen, titulo, descripcion, precio, handleAgregar, handleQuitar, handleAumentar, handleDisminuir}) => {
- 
-  const [added, setAdded] = useState(false)
-
-  const clickAgregar = () =>{
+export const Cards = ({producto, handleAgregar, handleQuitar}) => {
+   const clickAgregar = () =>{
     handleAgregar()
-    setAdded(true)
+    producto.added=true
   }
   const clickQuitar = () =>{
     handleQuitar()
-    setAdded(false)
+    producto.added=false
+
   }
 
   return (
     <div className="tarjeta">
-      <img src={imagen} alt={titulo} className="tarjeta-imagen"/>
+      <img src={producto.image} alt={producto.title} className="tarjeta-imagen"/>
       <div className="tarjeta-contenido">
-        <h3 className="tarjeta-titulo">{titulo}</h3>
-        <p className="tarjeta-descripcion">{descripcion}</p>
-        <p className="tarjeta-precio">{precio}</p>
-        {added 
+        <h3 className="tarjeta-titulo">{producto.title}</h3>
+        <p className="tarjeta-descripcion">{producto.description}</p>
+        <p className="tarjeta-precio">{producto.price}</p>
+        {producto.added 
         ? <button
             type="button"
             className="boton-quitar"

@@ -5,12 +5,9 @@ import { CarritoContext } from "../context/CarritoContext"
 
 export const ComprasPage = () => {
  
-  const {productos} = useContext(ProductosContext)
+  const {productos, setProductos} = useContext(ProductosContext)
   const {
-    listaCompras,
     agregarCompra,
-    aumentarCantidad,
-    disminuirCantidad,
     eliminarCompra,
   } = useContext(CarritoContext);
 
@@ -20,12 +17,7 @@ export const ComprasPage = () => {
   const handleQuitar =(id) => {
     eliminarCompra(id)
   }
-  const handleAumentar =() => {
 
-  }
-  const handleDisminuir =() => {
-
-  }
   return (
     <>
       <h1>Compras</h1>
@@ -33,10 +25,7 @@ export const ComprasPage = () => {
       {productos.map( (producto) => (
       <Cards
         key={producto.id}
-        imagen={producto.image}
-        titulo={producto.title}
-        descripcion={producto.description}
-        precio={producto.price}
+        producto={producto}
         handleAgregar={() => handleAgregar(producto)}
         handleQuitar={() => handleQuitar(producto.id)}
         />

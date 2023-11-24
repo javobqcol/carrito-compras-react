@@ -1,9 +1,11 @@
-import { useReducer } from "react"
+import { useContext, useReducer } from "react"
 import { CarritoContext } from "./CarritoContext"
+import { ProductosContext } from "./ProductosContext"
 const initialState = []
 
 export const CarritoProvider = ({ children }) => {
-  
+  const {productos, setProductos} = useContext(ProductosContext)
+
   const comprasReducer = (state = initialState, action = {}) => {
     switch (action.type) {
       case '[CARRITO] Agregar Compra':
@@ -24,6 +26,11 @@ export const CarritoProvider = ({ children }) => {
         })
         break;
       case '[CARRITO] Eliminar Compra':
+        productos.forEach(element => {
+          if (element.id === action.payload){
+            element.added = false
+          }
+        });
         return state.filter(compra => compra.id !== action.payload)
       default:
         return state;
@@ -41,19 +48,21 @@ export const CarritoProvider = ({ children }) => {
     dispatch(action)
   }
   const aumentarCantidad = (id) => {
-    const action ={
-      type : '[CARRITO] Aumentar Cantidad Compra',
-      payload:id
+    const action = {
+        type: '[CARRITO] Aumentar Cantidad Compra',
+        payload: id
     }
     dispatch(action)
   }
   const disminuirCantidad = (id) => {
-    const action ={
-      type : '[CARRITO] Disminuir Cantidad Compra',
-      payload:id
+    const action = {
+        type: '[CARRITO] Disminuir Cantidad Compra',
+        payload: id
     }
     dispatch(action)
   }
+
+
   const eliminarCompra = (id) => {
     const action ={
       type : '[CARRITO] Eliminar Compra',

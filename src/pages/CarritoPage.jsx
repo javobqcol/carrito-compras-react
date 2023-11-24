@@ -4,7 +4,6 @@ import { CarritoContext } from "../context/CarritoContext";
 export const CarritoPage = () => {
   const {
     listaCompras,
-    agregarCompra,
     aumentarCantidad,
     disminuirCantidad,
     eliminarCompra,
