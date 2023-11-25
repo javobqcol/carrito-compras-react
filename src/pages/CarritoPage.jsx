@@ -42,9 +42,9 @@ export const CarritoPage = () => {
               <td>{item.title}</td>
               <td className="text-end">{spanishNumberFormatter.format(item.price)}</td>
               <td className="text-center">
-                <button onClick={() => disminuirCantidad(item.id)} className="btn btn-outline-primary">-</button>
+                <button onClick={() => disminuirCantidad(item.id)} className="btn btn-outline-primary margen">-</button>
                 <button className="btn btn-primary">{item.cantidad}</button>
-                <button onClick={() => aumentarCantidad(item.id) } className="btn btn-outline-primary">+</button>
+                <button onClick={() => aumentarCantidad(item.id) } className="btn btn-outline-primary margen">+</button>
               </td>
               <td className="text-end">
                {spanishNumberFormatter.format(item.cantidad * item.price)}

@@ -2,8 +2,13 @@
     width: 80%;
     margin: 0 auto;
   }
+
 .container .padding{
   padding: 4rem 0 0 0;
+}
+
+.margen{
+  margin: 0px 2px;
 }
   .item-compra {
     display: flex;
