@@ -12,6 +12,7 @@ export const Cards = ({producto, handleAgregar, handleQuitar}) => {
   }
 
   return (
+  
     <div className="tarjeta">
       <img src={producto.image} alt={producto.title} className="tarjeta-imagen"/>
       <div className="tarjeta-contenido">

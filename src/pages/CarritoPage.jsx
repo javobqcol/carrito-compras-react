@@ -14,7 +14,7 @@ export const CarritoPage = () => {
   }
 
   return (
-    <>
+    <div className="container padding" >
       <table className="table">
         <thead>
           <tr>
@@ -28,7 +28,7 @@ export const CarritoPage = () => {
         <tbody>
           {listaCompras.map((item) => (
             <tr key={item.id}>
-              <th >{item.title}</th>
+              <td >{item.title}</td>
               <td>${item.price}</td>
               <td>
                 <button onClick={() => disminuirCantidad(item.id)} className="btn btn-outline-primary">-</button>
@@ -48,15 +48,18 @@ export const CarritoPage = () => {
               </td>
             </tr>
           ))}
-          <th><b><i>Total:</i></b></th>
-          <td></td>
-          <td></td>
-          <td>${calcularTotal()}</td>
+
+          <tr>
+            <td><b><i>Total:</i></b></td>
+            <td></td>
+            <td></td>
+            <td>${calcularTotal()}</td>
+          </tr>
         </tbody>
       </table>
       <div className="d-grid gap-2">
         <button className="btn btn-primary">Comprar</button>
       </div>
-    </>
+    </div>
   );
 };

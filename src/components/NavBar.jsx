@@ -10,8 +10,8 @@ export const NavBar = () => {
   const { listaCompras } = useContext(CarritoContext)
 
   return ( 
-
-    <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <header>
+    <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
       <div className="container-fluid">
         <NavLink to='/' className="navbar-brand" href="#">Carrito
         </NavLink>
@@ -32,5 +32,6 @@ export const NavBar = () => {
         </div>
       </div>
     </nav>
+    </header>
   )
 }

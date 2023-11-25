@@ -2,7 +2,9 @@
     width: 80%;
     margin: 0 auto;
   }
-  
+.container .padding{
+  padding: 4rem 0 0 0;
+}
   .item-compra {
     display: flex;
     align-items: center;

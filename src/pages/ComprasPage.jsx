@@ -19,7 +19,7 @@ export const ComprasPage = () => {
   }
 
   return (
-    <>
+    <div className="container padding">
       <h1>Compras</h1>
       <hr />
       {productos.map( (producto) => (
@@ -30,6 +30,6 @@ export const ComprasPage = () => {
         handleQuitar={() => handleQuitar(producto.id)}
         />
       ))}
-    </>
+    </div>
   )
 }
