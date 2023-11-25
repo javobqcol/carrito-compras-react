@@ -10,6 +10,15 @@ export const Cards = ({producto, handleAgregar, handleQuitar}) => {
     producto.added=false
 
   }
+  const formatConfig = {
+    style: "currency",
+    currency: "COP", // CNY for Chinese Yen, EUR for Euro
+    minimumFractionDigits: 2,
+    currencyDisplay: "symbol",
+  };
+  
+  // setup formatters
+  const spanishNumberFormatter = new Intl.NumberFormat("es-CO", formatConfig);
 
   return (
   
@@ -18,7 +27,7 @@ export const Cards = ({producto, handleAgregar, handleQuitar}) => {
       <div className="tarjeta-contenido">
         <h3 className="tarjeta-titulo">{producto.title}</h3>
         <p className="tarjeta-descripcion">{producto.description}</p>
-        <p className="tarjeta-precio">{producto.price}</p>
+        <p className="tarjeta-precio">{spanishNumberFormatter.format(producto.price)}</p>
         {producto.added 
         ? <button
             type="button"
